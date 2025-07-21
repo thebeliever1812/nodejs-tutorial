@@ -1,4 +1,5 @@
 const fs = require("fs"); // fs stands for file system
+const os = require("os");
 
 // Syncronous
 // fs.writeFileSync('./test.txt', 'This is a test file')
@@ -30,3 +31,18 @@ const fs = require("fs"); // fs stands for file system
 // To create folders
 // fs.mkdirSync("my-docs");
 // fs.mkdirSync("your-docs/a/b", { recursive: true });
+
+// Blocking requests
+// console.log("1");
+// const result = fs.readFileSync("./contacts.txt", "utf-8");
+// console.log(result);
+// console.log("2");
+
+// Non-Blocking requests
+// console.log("1");
+// fs.readFile("./contacts.txt", "utf-8", (err, result) => {
+// 	console.log(result);
+// });
+// console.log("2");
+
+console.log(os.cpus().length)
