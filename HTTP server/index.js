@@ -1,11 +1,14 @@
 const http = require("http");
 const fs = require("fs");
+const { URL } = require("url");
 
 const myServer = http.createServer((req, res) => {
 	// console.log("New request received");
 	// console.log(req.url)
 	// console.log(req.method)
 	// console.log(req.socket.remoteAddress) // For IP address
+
+	if (req.url === "/favicon.ico") return res.end();
 
 	const ip = req.socket.remoteAddress;
 	const clientIp = ip === "::1" ? "127.0.0.1" : ip;
@@ -18,12 +21,17 @@ const myServer = http.createServer((req, res) => {
 		if (err) console.log(err);
 	});
 
-	switch (req.url) {
+	const myUrl = new URL(req.url, `http://${req.headers.host}`)
+	// console.log(myUrl)
+
+	switch (myUrl.pathname) {
 		case "/":
 			res.end("Hello from Server");
 			break;
 		case "/about":
-			res.end("I am Basir Ahmad");
+			const name = myUrl.searchParams.get("name")
+			const userId = myUrl.searchParams.get("userId")
+			res.end(`Hii, I am ${name} and my user ID is ${userId}`);
 			break;
 		default:
 			res.end("Error 404: Not Found");
