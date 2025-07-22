@@ -4,3 +4,4 @@ Request Recieved from 127.0.0.1 of GET /about?name=Basir on 21/7/2025 at 10:19:1
 Request Recieved from 127.0.0.1 of GET /about on 21/7/2025 at 10:22:47 pm
 Request Recieved from 127.0.0.1 of GET /signup on 21/7/2025 at 10:22:50 pm
 Request Recieved from 127.0.0.1 of GET /signup on 21/7/2025 at 10:22:59 pm
+Request Recieved from 127.0.0.1 of GET / on 22/7/2025 at 10:44:06 am
