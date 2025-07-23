@@ -1,13 +1,5 @@
 [
 	{
-		"id": 1,
-		"first_name": "Jarvis",
-		"last_name": "Boom",
-		"email": "jboom0@washingtonpost.com",
-		"gender": "Male",
-		"country": "Sweden"
-	},
-	{
 		"id": 2,
 		"first_name": "Tandie",
 		"last_name": "Kilfoyle",
